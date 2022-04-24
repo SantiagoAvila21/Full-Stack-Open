@@ -10,7 +10,11 @@ const Statistic = ( { text,value } ) => {
 }
 
 const Statistics = ({stats}) => {
-  if(stats.total.value === 0) return (<tr> No feedback given </tr>);
+  if(stats.total.value === 0) return (
+    <tr>
+      <td> No feedback given </td>
+    </tr>
+  );
   return (
     Object.keys(stats).map( (key,id) => <Statistic key={id} text={stats[key].text} value={stats[key].value}/> )
   );
